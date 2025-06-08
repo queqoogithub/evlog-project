@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>My Blog</title>
+  <!-- ✅ Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ✅ Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <nav><a href="/">Home</a></nav>
-  <main>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <nav class="my-4 flex justify-center gap-4 font-medium">
+    <a href="/index.html" class="hover:underline">Home</a>
+    <span>|</span>
+    <a href="/about.html" class="hover:underline">About</a>
+  </nav>
+  <div class="max-w-3xl mx-auto px-4 py-8">
     
   <h1>Posts tagged with "intro"</h1>
   <ul>
     
-      <li><a href="/first-post.html">My First Post</a></li>
+      <li><a href="/post-1.html">My First Post</a></li>
     
   </ul>
 
-  </main>
+  </div>
 </body>
 </html>

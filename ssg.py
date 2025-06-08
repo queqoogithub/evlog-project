@@ -1,6 +1,8 @@
 import os
+import shutil
 import markdown
 import frontmatter
+from math import ceil
 from datetime import datetime
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
@@ -88,10 +90,38 @@ for page_num in range(1, total_pages + 1):
         f.write(rendered)
 
 # 5. สร้าง homepage.html (แสดงโพสต์ล่าสุด 3 อัน)
+# POSTS_PER_PAGE = 5
+# 1. โหลด template
 homepage_template = env.get_template("homepage.html")
-latest_posts = posts[:3]  # เอาโพสต์ใหม่สุด 3 อัน
+# 2. จำนวนหน้า
+total_pages = ceil(len(posts) / POSTS_PER_PAGE)
 
-homepage_rendered = homepage_template.render(posts=latest_posts)
+for page in range(total_pages):
+    start = page * POSTS_PER_PAGE
+    end = start + POSTS_PER_PAGE
+    page_posts = posts[start:end]
 
-with open(os.path.join(OUTPUT_DIR, "homepage.html"), "w") as f:
-    f.write(homepage_rendered)
+    # ชื่อไฟล์: หน้าแรกคือ index.html, หน้าอื่นคือ page2.html, page3.html ...
+    if page == 0:
+        filename = "index.html"
+    else:
+        filename = f"page{page + 1}.html"
+
+    output = homepage_template.render(
+        posts=page_posts,
+        current_page=page + 1,
+        total_pages=total_pages,
+    )
+    with open(os.path.join(OUTPUT_DIR, filename), "w", encoding="utf-8") as f:
+        f.write(output)
+
+# 6. สร้างหน้า about.html
+about_template = env.get_template("about.html")
+about_output = about_template.render()
+with open(os.path.join(OUTPUT_DIR, "about.html"), "w", encoding="utf-8") as f:
+    f.write(about_output)
+
+# X. คัดลอก static folder ไปยัง output
+static_dir = "static"
+if os.path.exists(static_dir):
+    shutil.copytree(static_dir, os.path.join(OUTPUT_DIR, "static"), dirs_exist_ok=True)

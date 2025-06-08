@@ -1,15 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Welcome to My Blog</h1>
-  <p>Latest posts:</p>
-  <ul>
-    {% for post in posts %}
-      <li>
-        <h2><a href="{{ post.slug }}.html">{{ post.title }}</a></h2>
-        <small>{{ post.date.strftime('%Y-%m-%d') }}</small>
-        <p>{{ post.content[:150] | safe }}...</p>
-        <a href="{{ post.slug }}.html">Read more →</a>
-      </li>
-    {% endfor %}
-  </ul>
+
+<!-- ✅ Hero Section -->
+<section class="bg-cover bg-center text-white py-24 px-4 rounded-xl mb-10 font-prompt" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230607/pngtree-halloween-pumpkin-carving-and-graveyard-wallpaper-image_2934278.jpg')">
+  <div class="text-center max-w-2xl mx-auto">
+    <h1 class="text-4xl font-bold mb-2">Welcome to Qool Blog</h1>
+    <p class="text-lg opacity-90">สวัสดี ชาวโลก</p>
+  </div>
+</section>
+
+<!-- ✅ แสดงโพสต์ -->
+<ul class="space-y-6">
+  {% for post in posts %}
+    <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <h3 class="text-xl font-bold text-blue-600 hover:underline">
+        <a href="{{ post.slug }}.html">{{ post.title }}</a>
+      </h3>
+      <p class="text-sm text-gray-500">{{ post.date.strftime('%Y-%m-%d') }}</p>
+      <!-- <p class="mt-2 text-gray-700">{{ post.content[:150] | safe }}...</p> -->
+      <a href="{{ post.slug }}.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<!-- ✅ Pagination -->
+<div class="flex justify-center mt-10 space-x-4 text-sm">
+  {% if current_page > 1 %}
+    <a href="{{ 'index.html' if current_page == 2 else 'page' ~ (current_page - 1) ~ '.html' }}"
+       class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">&laquo; Previous</a>
+  {% endif %}
+
+  {% for page_num in range(1, total_pages + 1) %}
+    <a href="{{ 'index.html' if page_num == 1 else 'page' ~ page_num ~ '.html' }}"
+       class="px-3 py-1 rounded {{ 'bg-blue-600 text-white' if page_num == current_page else 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
+      {{ page_num }}
+    </a>
+  {% endfor %}
+
+  {% if current_page < total_pages %}
+    <a href="page{{ current_page + 1 }}.html"
+       class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next &raquo;</a>
+  {% endif %}
+</div>
+
 {% endblock %}
