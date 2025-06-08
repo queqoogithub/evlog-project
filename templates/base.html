@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ post.title if post else "My Blog" }}</title>
+</head>
+<body>
+  <nav><a href="/">Home</a></nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

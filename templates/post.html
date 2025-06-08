@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <div>{{ post.content | safe }}</div>
+  <p>Tags:
+    {% for tag in post.tags %}
+      <a href="/tags/{{ tag }}.html">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+{% endblock %}
