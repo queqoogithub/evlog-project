@@ -171,7 +171,7 @@
         return price
 </code></pre>
 <p>```</p>
-<p>❌ CT สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!</p>
+<p>❌ TC สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!</p>
 <p>```</p>
 <pre><code>class TestCalculateDiscountVerbose(unittest.TestCase):
     def test_vip_customer(self):
@@ -197,7 +197,7 @@
         self.assertEqual(calculate_discount(200, "VIP"), 160.0)
 </code></pre>
 <p>```</p>
-<p>✅ CT น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม <code>customer_type</code></p>
+<p>✅ TC น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม <code>customer_type</code></p>
 <p>```</p>
 <pre><code>class TestCalculateDiscount(unittest.TestCase):
     def test_customer_type_discount(self):
