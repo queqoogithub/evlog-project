@@ -16,11 +16,85 @@
         extend: {
           fontFamily: {
             sans: ['Prompt', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
           }
         }
       }
     }
   </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans m-0 p-0 bg-gray-50 text-gray-800 leading-relaxed;
+      }
+      
+      a {
+        @apply text-blue-500 no-underline hover:underline;
+      }
+
+      /* ✅ List items with emoji bullets */
+      ul li {
+        @apply relative pl-6 mb-2;
+      }
+      
+      ul li::before {
+        content: "🎃";
+        @apply absolute left-0 top-0;
+      }
+    }
+    
+    @layer components {
+      .container {
+        @apply max-w-3xl mx-auto;
+      }
+      
+      h1 {
+        @apply text-5xl mb-8;
+      }
+
+      h2 {
+        @apply text-3xl mb-2;
+      }
+
+      h3 {
+        @apply text-2xl mb-2;
+      }
+
+      img {
+        @apply rounded-lg my-2;
+      }
+
+      /* p {
+        @apply text-xl opacity-90;
+      } */
+      
+      .post-list {
+        @apply list-none p-0;
+      }
+      
+      .post-list {
+        @apply bg-white p-6 rounded-lg mb-4 shadow-md hover:shadow-lg transition-shadow;
+      }
+
+      /* ✅ Code formatting */
+      pre {
+        @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-4;
+      }
+      
+      code {
+        @apply font-mono text-sm;
+      }
+      
+      pre code {
+        @apply bg-transparent text-gray-100;
+      }
+      
+      /* Inline code */
+      p code, li code {
+        @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
   <nav class="my-4 flex justify-center gap-4 font-medium">

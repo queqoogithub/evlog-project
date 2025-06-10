@@ -16,11 +16,85 @@
         extend: {
           fontFamily: {
             sans: ['Prompt', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
           }
         }
       }
     }
   </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans m-0 p-0 bg-gray-50 text-gray-800 leading-relaxed;
+      }
+      
+      a {
+        @apply text-blue-500 no-underline hover:underline;
+      }
+
+      /* ✅ List items with emoji bullets */
+      ul li {
+        @apply relative pl-6 mb-2;
+      }
+      
+      ul li::before {
+        content: "🎃";
+        @apply absolute left-0 top-0;
+      }
+    }
+    
+    @layer components {
+      .container {
+        @apply max-w-3xl mx-auto;
+      }
+      
+      h1 {
+        @apply text-5xl mb-8;
+      }
+
+      h2 {
+        @apply text-3xl mb-2;
+      }
+
+      h3 {
+        @apply text-2xl mb-2;
+      }
+
+      img {
+        @apply rounded-lg my-2;
+      }
+
+      /* p {
+        @apply text-xl opacity-90;
+      } */
+      
+      .post-list {
+        @apply list-none p-0;
+      }
+      
+      .post-list {
+        @apply bg-white p-6 rounded-lg mb-4 shadow-md hover:shadow-lg transition-shadow;
+      }
+
+      /* ✅ Code formatting */
+      pre {
+        @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-4;
+      }
+      
+      code {
+        @apply font-mono text-sm;
+      }
+      
+      pre code {
+        @apply bg-transparent text-gray-100;
+      }
+      
+      /* Inline code */
+      p code, li code {
+        @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
   <nav class="my-4 flex justify-center gap-4 font-medium">
@@ -31,19 +105,25 @@
   <div class="max-w-3xl mx-auto px-4 py-8">
     
 
+<section class="bg-white p-8 rounded-lg shadow-md mb-2">
+    <p class="mb-4 text-gray-700">
+      <h1 class="text-3xl font-medium mb-4">About Us</h1>
+      สวัสดี! ยินดีต้อนรับสู่ blog ของผม 🌟  
+      เนื้อหาใน blog นี้จะค่อนข้างกระจัดกระจาย อาจมีเรื่องการใช้ชีวิต เรื่องเดฟ เรื่องเทรด เรื่องเทคโนโลยี ฯลฯ 💻✨ 
+    </p><br>
+    <p class="mb-4 text-gray-700">
+      ที่นี่ผมจะแชร์อะไรก็ได้ ที่ผมอยากแชร์ฮ่าๆ 🚀
+    </p>
+    <p class="text-gray-600">
+      ขอบคุณที่เข้ามาอ่านครับ 🙏  
+      ถ้าชอบสามารถติดตามหรือแชร์ได้เลย!
+    </p>
+</section>
 <section class="bg-white p-8 rounded-lg shadow-md">
-  <h1 class="text-3xl font-bold mb-4">About Us</h1>
-  <p class="mb-4 text-gray-700">
-    สวัสดี! ยินดีต้อนรับสู่บล็อกของผม 🌟  
-    เหมาะกับคนที่ชอบแบ่งปันความรู้และประสบการณ์ด้านเทคโนโลยี 💻✨  
-  </p>
-  <p class="mb-4 text-gray-700">
-    ที่นี่ผมจะแชร์อะไรก็ได้ ที่ผมอยากแชร์ฮ่าๆ 🚀
-  </p>
-  <p class="text-gray-600">
-    ขอบคุณที่เข้ามาอ่านครับ 🙏  
-    ถ้าชอบสามารถติดตามหรือแชร์ได้เลย!
-  </p>
+    <img src="https://colorfully.eu/wp-content/uploads/2013/10/halloween.jpg" alt="Dinopiakz" class="mx-auto rounded-lg">
+    <div class="text-center mt-4">
+        🎃 เนื้อหาหลักๆผมแชร์ไว้อ่านเอง ถ้าผิดพลาดก็ขออภัยด้วยนะครับ 🎃
+    </div>
 </section>
 
 

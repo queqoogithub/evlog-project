@@ -16,11 +16,85 @@
         extend: {
           fontFamily: {
             sans: ['Prompt', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
           }
         }
       }
     }
   </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans m-0 p-0 bg-gray-50 text-gray-800 leading-relaxed;
+      }
+      
+      a {
+        @apply text-blue-500 no-underline hover:underline;
+      }
+
+      /* ✅ List items with emoji bullets */
+      ul li {
+        @apply relative pl-6 mb-2;
+      }
+      
+      ul li::before {
+        content: "🎃";
+        @apply absolute left-0 top-0;
+      }
+    }
+    
+    @layer components {
+      .container {
+        @apply max-w-3xl mx-auto;
+      }
+      
+      h1 {
+        @apply text-5xl mb-8;
+      }
+
+      h2 {
+        @apply text-3xl mb-2;
+      }
+
+      h3 {
+        @apply text-2xl mb-2;
+      }
+
+      img {
+        @apply rounded-lg my-2;
+      }
+
+      /* p {
+        @apply text-xl opacity-90;
+      } */
+      
+      .post-list {
+        @apply list-none p-0;
+      }
+      
+      .post-list {
+        @apply bg-white p-6 rounded-lg mb-4 shadow-md hover:shadow-lg transition-shadow;
+      }
+
+      /* ✅ Code formatting */
+      pre {
+        @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-4;
+      }
+      
+      code {
+        @apply font-mono text-sm;
+      }
+      
+      pre code {
+        @apply bg-transparent text-gray-100;
+      }
+      
+      /* Inline code */
+      p code, li code {
+        @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
   <nav class="my-4 flex justify-center gap-4 font-medium">
@@ -44,52 +118,37 @@
   
     <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
       <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="post-4.html">My N Post</a>
+        <a href="post-3.html">โค้ดเริ่มตุ่ย 💩</a>
       </h3>
-      <p class="text-sm text-gray-500">2025-07-01</p>
-      <!-- <p class="mt-2 text-gray-700"><h1>Hello World</h1>
-<p>This is my <strong>second</strong> post!</p>...</p> -->
-      <a href="post-4.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
+      <p class="text-sm text-gray-500">2025-07-03</p>
+      <!-- <p class="mt-2 text-gray-700"><h3>Code Smells</h3>
+<p><span style="color:brown">Code Smells (โค้ดเริ่มตุ่ย 💩 )</span> คือ 
+สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่า...</p> -->
+      <a href="post-3.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
     </li>
   
     <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
       <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="post-5.html">My N Post</a>
+        <a href="post-2.html">Test Coverage 🧪</a>
       </h3>
-      <p class="text-sm text-gray-500">2025-07-01</p>
-      <!-- <p class="mt-2 text-gray-700"><h1>Hello World</h1>
-<p>This is my <strong>second</strong> post!</p>...</p> -->
-      <a href="post-5.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
-    </li>
-  
-    <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-      <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="post-2.html">My Second Post</a>
-      </h3>
-      <p class="text-sm text-gray-500">2025-07-01</p>
-      <!-- <p class="mt-2 text-gray-700"><h1>Hello World</h1>
-<p>This is my <strong>second</strong> post!</p>...</p> -->
+      <p class="text-sm text-gray-500">2025-07-02</p>
+      <!-- <p class="mt-2 text-gray-700"><h2>ประเด็นสำคัญเกี่ยวกับ Test Coverage ( TC )</h2>
+<p><br></p>
+<p><img alt="An old rock in the desert" src="https://previews.dropbox.com/p/thumb/ACpA...</p> -->
       <a href="post-2.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
     </li>
   
     <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
       <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="post-6.html">My N Post</a>
+        <a href="post-1.html">My First Post</a>
       </h3>
-      <p class="text-sm text-gray-500">2025-07-01</p>
-      <!-- <p class="mt-2 text-gray-700"><h1>Hello World</h1>
-<p>This is my <strong>second</strong> post!</p>...</p> -->
-      <a href="post-6.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
-    </li>
-  
-    <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-      <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="post-3.html">My 3rd Post</a>
-      </h3>
-      <p class="text-sm text-gray-500">2025-07-01</p>
-      <!-- <p class="mt-2 text-gray-700"><h1>Hello World</h1>
-<p>This is my <strong>second</strong> post!</p>...</p> -->
-      <a href="post-3.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
+      <p class="text-sm text-gray-500">2025-05-01</p>
+      <!-- <p class="mt-2 text-gray-700"><h2>Legacy Code !</h2>
+<p>This is my <strong>first</strong> post!</p>
+<p><code>print('hello')</code></p>
+<h1>&nbsp;</h1>
+<p><img alt="An old rock in t...</p> -->
+      <a href="post-1.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
     </li>
   
 </ul>
@@ -104,15 +163,7 @@
       1
     </a>
   
-    <a href="page2.html"
-       class="px-3 py-1 rounded bg-gray-100 text-gray-700 hover:bg-gray-200">
-      2
-    </a>
-  
 
-  
-    <a href="page2.html"
-       class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next &raquo;</a>
   
 </div>
 

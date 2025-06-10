@@ -64,7 +64,7 @@ for tag, tagged_posts in tags_dict.items():
 
 print("✅ Static site generated!")
 
-# 4. สร้าง index.html + page2.html + ...
+# 4. สร้าง pagination -> index.html + page2.html + ...
 index_template = env.get_template("index.html")
 POSTS_PER_PAGE = 5
 

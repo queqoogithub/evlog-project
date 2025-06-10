@@ -16,11 +16,85 @@
         extend: {
           fontFamily: {
             sans: ['Prompt', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
           }
         }
       }
     }
   </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans m-0 p-0 bg-gray-50 text-gray-800 leading-relaxed;
+      }
+      
+      a {
+        @apply text-blue-500 no-underline hover:underline;
+      }
+
+      /* ✅ List items with emoji bullets */
+      ul li {
+        @apply relative pl-6 mb-2;
+      }
+      
+      ul li::before {
+        content: "🎃";
+        @apply absolute left-0 top-0;
+      }
+    }
+    
+    @layer components {
+      .container {
+        @apply max-w-3xl mx-auto;
+      }
+      
+      h1 {
+        @apply text-5xl mb-8;
+      }
+
+      h2 {
+        @apply text-3xl mb-2;
+      }
+
+      h3 {
+        @apply text-2xl mb-2;
+      }
+
+      img {
+        @apply rounded-lg my-2;
+      }
+
+      /* p {
+        @apply text-xl opacity-90;
+      } */
+      
+      .post-list {
+        @apply list-none p-0;
+      }
+      
+      .post-list {
+        @apply bg-white p-6 rounded-lg mb-4 shadow-md hover:shadow-lg transition-shadow;
+      }
+
+      /* ✅ Code formatting */
+      pre {
+        @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-4;
+      }
+      
+      code {
+        @apply font-mono text-sm;
+      }
+      
+      pre code {
+        @apply bg-transparent text-gray-100;
+      }
+      
+      /* Inline code */
+      p code, li code {
+        @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
   <nav class="my-4 flex justify-center gap-4 font-medium">
@@ -30,9 +104,118 @@
   </nav>
   <div class="max-w-3xl mx-auto px-4 py-8">
     
-  <h1>My Second Post</h1>
-  <div><h1>Hello World</h1>
-<p>This is my <strong>second</strong> post!</p></div>
+  <h1>Test Coverage 🧪</h1>
+  <div><h2>ประเด็นสำคัญเกี่ยวกับ Test Coverage ( TC )</h2>
+<p><br></p>
+<p><img alt="An old rock in the desert" src="https://previews.dropbox.com/p/thumb/ACpATM9P9pD4b8bwz4HxMjND_WrwLauerC4NW6SRMbmx6ERszo_1q5PQemRDQvmtxojhOfD15MSosiwx87KPedmEl7S014h__Ucdt4pFTyge1ICaQuU6tAGMw1rFBeiSvzcBlXbItNNqwM3-wQAMrG4BtYSckQ8ALH_fwiYnbbIyy_D2vSZ34DaIabRms1ip8HG5H-sBI3IatQSBhlk7Jj4tN9D8E-Y7UtB4c56GGbj4OREZXZ4IbdQuH5IoF8R3qAPysMip4Z4Ac-RIrQJsduZjho7565gBuZ_kFLHHuLzS5Eqv-o6OhHrO00fxzTbGRqs/p.png" /></p>
+<p><br></p>
+<p>แม้ว่า TC จะช่วยตรวจสอบโค้ดส่วนที่ยังไม่ได้เทส (Finding Untested Code) แต่ก็มีข้อควรระวังที่เราควรพิจารณา 👇🏼</p>
+<p><br></p>
+<h3>ตัวเลข TC ไม่ใช่ตัวชี้วัดคุณภาพการเทส:</h3>
+<ul>
+<li>การกำหนดเป้าหมาย TC ที่สูงๆ เช่น "ต้องอย่างน้อย 87% ก่อนนำโค้ดขึ้น Production" อาจทำให้เดฟเขียนเทสเพื่อให้ได้ตัวเลขตามเป้าหมาย โดยไม่ได้คำนึงถึงคุณภาพ (Quality) ของการเทสจริงๆ </li>
+<li>การมี TC สูงๆ เช่น 100% อาจบ่งบอกได้ว่ามีการเขียนเทสเพียงเพื่อเพิ่มตัวเลข ไม่ได้ดูว่าส่วนใดของโค้ดมีความสำคัญและควรเน้นการทดสอบเป็นพิเศษ (เช่น การเทส <code>Trivial Code</code>)</li>
+</ul>
+<p><br></p>
+<p>Trivial Code</p>
+<p>```</p>
+<pre><code>def process_status_code(status_code):
+    """
+    Processes a given HTTP status code.
+    """
+    if status_code &gt;= 200 and status_code &lt; 300:
+        return "SUCCESS"
+    elif status_code &gt;= 400 and status_code &lt; 500:
+        return "CLIENT_ERROR"
+    elif status_code &gt;= 500 and status_code &lt; 600:
+        return "SERVER_ERROR"
+    else:
+        return "UNKNOWN"
+</code></pre>
+<p>```</p>
+<p>❌ Trivial Test ▶️ การเขียนเทสเพื่อให้ครอบคลุมทุก <code>if | elif | else</code> statement นั้นง่ายมากๆ</p>
+<p>```</p>
+<pre><code>class TestStatusCodeProcessor(unittest.TestCase):
+    def test_success_status(self):
+        self.assertEqual(process_status_code(200), "SUCCESS")
+        self.assertEqual(process_status_code(299), "SUCCESS")
+
+    def test_client_error_status(self):
+        self.assertEqual(process_status_code(400), "CLIENT_ERROR")
+        self.assertEqual(process_status_code(404), "CLIENT_ERROR")
+
+    def test_server_error_status(self):
+        self.assertEqual(process_status_code(500), "SERVER_ERROR")
+        self.assertEqual(process_status_code(503), "SERVER_ERROR")
+
+    def test_unknown_status(self):
+        self.assertEqual(process_status_code(100), "UNKNOWN")
+        self.assertEqual(process_status_code(300), "UNKNOWN")
+        self.assertEqual(process_status_code(600), "UNKNOWN")
+</code></pre>
+<p>```</p>
+<h3>คุณภาพสำคัญกว่าปริมาณ:</h3>
+<ul>
+<li>ควรเน้นที่ Behavior หรือ จุดที่ Complexity สูง ไม่ใช่แค่การเขียนเทสเพื่อให้ครอบคลุมโค้ดมากที่สุด และหากการเปลี่ยนแปลงโค้ดเพียงเล็กน้อย แล้วต้องแก้ไขเทสจำนวนมาก อาจแสดงว่าเทสมีความซ้ำซ้อนกันอยู่ (Coupling)</li>
+<li>แนวทาง Test-Driven Development (TDD) เป็นแนวทางที่ดี แต่ก็ไม่เพียงพอที่จะรับประกันได้ว่าเทสนั้นมีคุณภาพดีเสมอไป เช่น ในกรณีที่เดฟตีความ "ความต้องการผิดพลาด" โค้ดที่ผ่านเทส นั้นก็ยังอาจไม่ตอบโจทย์ Client อยู่ดี</li>
+</ul>
+<p>```</p>
+<pre><code>def calculate_discount(price: float, customer_type: str) -&gt; float:
+    if customer_type == "VIP":
+        return price * 0.8
+    elif customer_type == "Regular":
+        return price * 0.9
+    else:
+        return price
+</code></pre>
+<p>```</p>
+<p>❌ CT สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!</p>
+<p>```</p>
+<pre><code>class TestCalculateDiscountVerbose(unittest.TestCase):
+    def test_vip_customer(self):
+        self.assertEqual(calculate_discount(100.0, "VIP"), 80.0)
+
+    def test_regular_customer(self):
+        self.assertEqual(calculate_discount(100.0, "Regular"), 90.0)
+
+    def test_unknown_customer(self):
+        self.assertEqual(calculate_discount(100.0, "Other"), 100.0)
+
+    def test_zero_price(self):
+        self.assertEqual(calculate_discount(0.0, "VIP"), 0.0)
+
+    def test_negative_price(self):
+        self.assertEqual(calculate_discount(-100.0, "Regular"), -90.0)
+
+    def test_none_customer(self):
+        with self.assertRaises(TypeError):
+            calculate_discount(100.0)
+
+    def test_integer_price(self):
+        self.assertEqual(calculate_discount(200, "VIP"), 160.0)
+</code></pre>
+<p>```</p>
+<p>✅ CT น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม <code>customer_type</code></p>
+<p>```</p>
+<pre><code>class TestCalculateDiscount(unittest.TestCase):
+    def test_customer_type_discount(self):
+        test_cases = [
+            ("VIP", 100.0, 80.0),
+            ("Regular", 100.0, 90.0),
+            ("Other", 100.0, 100.0),
+        ]
+        for customer_type, price, expected in test_cases:
+            with self.subTest(customer_type=customer_type):
+                self.assertEqual(calculate_discount(price, customer_type), expected)
+</code></pre>
+<p>```</p>
+<h3>เมื่อไหร่ที่เรียกได้ว่าทดสอบเพียงพอ:</h3>
+<ul>
+<li>เมื่อถึงจุดที่แทบจะไม่มี Bugs บน Production</li>
+<li>เมื่อถึงจุดที่การ Refactoring เป็นเรื่องง่าย</li>
+</ul>
+<p><br></p>
+<p>Refs: <a href="https://martinfowler.com/bliki/TestCoverage.html">Martin Fowler - Test Coverage</a></p></div>
   <p>Tags:
     
       <a href="/tags/personal.html">personal</a>
