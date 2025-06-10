@@ -8,7 +8,7 @@ tags: ["personal"]
 
 <br>
 
-![An old rock in the desert](https://previews.dropbox.com/p/thumb/ACpATM9P9pD4b8bwz4HxMjND_WrwLauerC4NW6SRMbmx6ERszo_1q5PQemRDQvmtxojhOfD15MSosiwx87KPedmEl7S014h__Ucdt4pFTyge1ICaQuU6tAGMw1rFBeiSvzcBlXbItNNqwM3-wQAMrG4BtYSckQ8ALH_fwiYnbbIyy_D2vSZ34DaIabRms1ip8HG5H-sBI3IatQSBhlk7Jj4tN9D8E-Y7UtB4c56GGbj4OREZXZ4IbdQuH5IoF8R3qAPysMip4Z4Ac-RIrQJsduZjho7565gBuZ_kFLHHuLzS5Eqv-o6OhHrO00fxzTbGRqs/p.png)
+![](https://previews.dropbox.com/p/thumb/ACpATM9P9pD4b8bwz4HxMjND_WrwLauerC4NW6SRMbmx6ERszo_1q5PQemRDQvmtxojhOfD15MSosiwx87KPedmEl7S014h__Ucdt4pFTyge1ICaQuU6tAGMw1rFBeiSvzcBlXbItNNqwM3-wQAMrG4BtYSckQ8ALH_fwiYnbbIyy_D2vSZ34DaIabRms1ip8HG5H-sBI3IatQSBhlk7Jj4tN9D8E-Y7UtB4c56GGbj4OREZXZ4IbdQuH5IoF8R3qAPysMip4Z4Ac-RIrQJsduZjho7565gBuZ_kFLHHuLzS5Eqv-o6OhHrO00fxzTbGRqs/p.png)
 
 <br>
 
