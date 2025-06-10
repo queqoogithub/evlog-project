@@ -84,7 +84,7 @@ Trivial Code
             return price
 ```
 
-❌ CT สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!
+❌ TC สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!
 
 ```
 
@@ -112,7 +112,7 @@ Trivial Code
             self.assertEqual(calculate_discount(200, "VIP"), 160.0)
 ```
 
-✅ CT น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม ```customer_type```
+✅ TC น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม ```customer_type```
 
 ```
 
