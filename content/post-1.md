@@ -1,5 +1,5 @@
 ---
-title: "My First Post"
+title: "My Legacy Code"
 date: "2025-05-01"
 tags: ["intro", "personal"]
 ---
