@@ -7,6 +7,6 @@
 * User Interface: HTML + Tailwind CSS
 
 ## Todo
-[ ] in coming soon (blogs) - disable for in coming
-[ ] banner - 100% human written
-[ ] setting - env variables
+* [ ] in coming soon (blogs) - disable for in coming
+* [ ] banner - 100% human written
+* [ ] setting - env variables
