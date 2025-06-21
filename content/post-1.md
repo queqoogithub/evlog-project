@@ -1,5 +1,5 @@
 ---
-title: "My Legacy Code"
+title: "Coder: ผมจะเป็น Legacy Coder ให้ได้เลย 🧑🏻‍💻"
 date: "2025-05-01"
 tags: ["intro", "personal"]
 ---
@@ -8,9 +8,21 @@ tags: ["intro", "personal"]
 
 This is my **first** post!
 
+<div class="callout callout-info">
+💡 <strong>Info:</strong> Legacy code คือโค้ดที่ทำงานได้แต่ยากต่อการดูแลรักษา
+</div>
+
+<div class="callout callout-warning">
+⚠️ <strong>Warning:</strong> การแก้ไข legacy code ต้องระวังอย่าให้พัง!
+</div>
+
+<div class="callout callout-success">
+✅ <strong>Tip:</strong> เขียน test ก่อนแก้ไขจะปลอดภัยกว่า
+</div>
+
 ```
 print('hello')
 ```
 # &nbsp;
-![](https://previews.dropbox.com/p/thumb/ACpWWmOy-JZOG-SkYXa1r6djhhskEpyNM-yzA5RnQo32mI52jIXqE1a0KouLHE2RI_99BG2hno7Aj_w4wHx9nquHNBuBft_a8hxJT5-BqMWi_nvAQKhYOkfQ7snDc10GVSIDNbEeqJtVb8L8MedYNi_Nr8NVFjVzVS-oWyj4crQiIKqdR0K2Nyt9neamYCQ-mwM5P163h5cLP0BCjMtGoSF0B7Eh55S2zSSWbQpgYZe2EXIhTtHMcqLul3wJvsHYKX6H8B6AuzC5fT-6Uz5Yakexp9Qr1pOz8n6SSd538pBSCzMOZhGE6oS6Wbgzi-SgoXs/p.png)
+![](https://miro.medium.com/v2/resize:fit:500/1*w0Sa-2tK_TLB0EacGNEW_Q.jpeg)
 # &nbsp;

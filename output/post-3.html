@@ -93,6 +93,31 @@
       p code, li code {
         @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
       }
+
+       /* ✅ Callout styles */
+      .callout {
+        @apply p-4 rounded-lg border-l-4 my-4;
+      }
+      
+      .callout-info {
+        @apply bg-blue-50 border-blue-400 text-blue-900;
+      }
+      
+      .callout-warning {
+        @apply bg-yellow-50 border-yellow-400 text-yellow-900;
+      }
+      
+      .callout-danger {
+        @apply bg-red-50 border-red-400 text-red-900;
+      }
+      
+      .callout-success {
+        @apply bg-green-50 border-green-400 text-green-900;
+      }
+      
+      .callout-note {
+        @apply bg-gray-50 border-gray-400 text-gray-900;
+      }
     }
   </style>
 </head>
@@ -106,9 +131,9 @@
     
   <h1>โค้ดเริ่มตุ่ย 💩</h1>
   <div><h3>Code Smells</h3>
-<p><span style="color:brown">Code Smells (โค้ดเริ่มตุ่ย 💩 )</span> คือ 
+<p><span style="color:brown">Code Smells ( โค้ดเริ่มตุ่ย 💩 )</span> คือ 
 สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่านไม่รู้เรื่อง) ถึงแม้ว่าโค้ดจะยังทำงานได้ปกติ แต่การมี Code Smells จะทำให้โค้ดมีปัญหาในระยะยาว สะสมเป็น <code>Tech Debt</code></p>
-<p><img alt="" src="https://previews.dropbox.com/p/thumb/ACriNLBItJ_r9xCZY3Gpmaz6N53yfNRp10yRQ720k78RaGNMSo-rPHem3jOrweGthZKCMiskckXG8uSgc5Pc9VvxJ1aFyDE_Xwr4JcMF0nGvbo5yUNTmRZqihhqdsJZemI8w5krIyHBXFhdVO2KXJwCGI8PL5l1LshObEsq2p7adVMFPivNhRK3DblUQQoXRERJA8DtUuSzPVblUWKOyEl0PNpmHlGSlLojQJbwpUQ0CIEkJ4YkdI9Ib4TwwW-QSeBUioc-Dc9_KqvWkHoOauMnLSHeuEUj3zLCVEbG6ZehImwTeBd4Xx2dyXCGIP332ZHc/p.png" /></p>
+<p><img alt="" src="https://previews.dropbox.com/p/thumb/ACr9_TTpRc8ku5pzqpTIwWTR1VQA_zNalDPZJN-2gLrwtm_x_Rj499zMrq5CaFTzqzw3bxef0vfACywLR5oyGUDTtUAG6BItyABXjz_KFxMej2y6If5ZQqTdNc-KyXxjPNN87uGU7VUWsnexmVHuH75I3KaQyBeJyqBXy_dI1Ufbedkvv0NPGiDAQ9VL2pqKvdXZcF_RHletei5KTYLoc8YsdMgwyCECZrG2_N4Z2z4WhYkH3N-HkM3rWx_wJCR7D_L0Qj5kbW1HcUR8sXNxy_ubR6nNocTizZc9i1h2RfsXBnLB96KkJEJaG37Jlif3pvXDevbXJ9J3c-EOZ9L8EddU/p.png?is_prewarmed=true" /></p>
 <p>&nbsp;</p>
 <h3>ทำไม Code Smells ถึงสำคัญ ?</h3>
 <ul>
@@ -226,7 +251,7 @@ class UserRepository:
     pass
 </code></pre>
 <p>```</p>
-<p>✅ การแก้ไข: แตกคลาสย่อยตามประเภท Parameters</p>
+<p>✅ การแก้ไข: แตก Class ย่อยตามประเภท Parameters</p>
 <p>```</p>
 <pre><code>from dataclasses import dataclass
 from typing import Optional
@@ -289,7 +314,7 @@ def calculate_discount(amount):
 <p>&nbsp;</p>
 <p>ถ้าโค้ดของคุณมีลักษณะ ❌ ดังกล่าว นั่นแสดงว่าโค้ดของคุณเริ่มส่งกลิ่นแล้วหละ (💩)</p>
 <p>&nbsp;</p>
-<h3>แนวทางเพื่อหลีกเลี่ยง Code Smells</h3>
+<h3>แนวทางเพื่อหลีกเลี่ยง Code Smells ?</h3>
 <ul>
 <li>Design Principles - ปฏิบัติตามหหลักการที่ดี เช่น SOLID Principles</li>
 <li>Code Review - ให้เพื่อนร่วมทีมช่วยตรวจสอบ</li>

@@ -6,10 +6,10 @@ tags: ["personal"]
 
 ### Code Smells
 
-<span style="color:brown">Code Smells (โค้ดเริ่มตุ่ย 💩 )</span> คือ 
+<span style="color:brown">Code Smells ( โค้ดเริ่มตุ่ย 💩 )</span> คือ 
 สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่านไม่รู้เรื่อง) ถึงแม้ว่าโค้ดจะยังทำงานได้ปกติ แต่การมี Code Smells จะทำให้โค้ดมีปัญหาในระยะยาว สะสมเป็น ```Tech Debt```
 
-![](https://previews.dropbox.com/p/thumb/ACriNLBItJ_r9xCZY3Gpmaz6N53yfNRp10yRQ720k78RaGNMSo-rPHem3jOrweGthZKCMiskckXG8uSgc5Pc9VvxJ1aFyDE_Xwr4JcMF0nGvbo5yUNTmRZqihhqdsJZemI8w5krIyHBXFhdVO2KXJwCGI8PL5l1LshObEsq2p7adVMFPivNhRK3DblUQQoXRERJA8DtUuSzPVblUWKOyEl0PNpmHlGSlLojQJbwpUQ0CIEkJ4YkdI9Ib4TwwW-QSeBUioc-Dc9_KqvWkHoOauMnLSHeuEUj3zLCVEbG6ZehImwTeBd4Xx2dyXCGIP332ZHc/p.png)
+![](https://previews.dropbox.com/p/thumb/ACr9_TTpRc8ku5pzqpTIwWTR1VQA_zNalDPZJN-2gLrwtm_x_Rj499zMrq5CaFTzqzw3bxef0vfACywLR5oyGUDTtUAG6BItyABXjz_KFxMej2y6If5ZQqTdNc-KyXxjPNN87uGU7VUWsnexmVHuH75I3KaQyBeJyqBXy_dI1Ufbedkvv0NPGiDAQ9VL2pqKvdXZcF_RHletei5KTYLoc8YsdMgwyCECZrG2_N4Z2z4WhYkH3N-HkM3rWx_wJCR7D_L0Qj5kbW1HcUR8sXNxy_ubR6nNocTizZc9i1h2RfsXBnLB96KkJEJaG37Jlif3pvXDevbXJ9J3c-EOZ9L8EddU/p.png?is_prewarmed=true)
 
 &nbsp;
 
@@ -139,7 +139,7 @@ tags: ["personal"]
         pass
 ```
 
-✅ การแก้ไข: แตกคลาสย่อยตามประเภท Parameters
+✅ การแก้ไข: แตก Class ย่อยตามประเภท Parameters
 
 ```
 
@@ -212,7 +212,7 @@ tags: ["personal"]
 
 &nbsp;
 
-### แนวทางเพื่อหลีกเลี่ยง Code Smells
+### แนวทางเพื่อหลีกเลี่ยง Code Smells ?
 
 * Design Principles - ปฏิบัติตามหหลักการที่ดี เช่น SOLID Principles
 * Code Review - ให้เพื่อนร่วมทีมช่วยตรวจสอบ

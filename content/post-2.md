@@ -128,7 +128,7 @@ Trivial Code
                     self.assertEqual(calculate_discount(price, customer_type), expected)
 ```
 
-### เมื่อไหร่ที่เรียกได้ว่าเทสเพียงพอ:
+### เมื่อไหร่ที่เรียกได้ว่าเทสเพียงพอ ?
 * เมื่อถึงจุดที่แทบจะไม่มี Bugs บน Production
 * เมื่อถึงจุดที่การ Refactoring เป็นเรื่องง่าย
 

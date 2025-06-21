@@ -93,6 +93,31 @@
       p code, li code {
         @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
       }
+
+       /* ✅ Callout styles */
+      .callout {
+        @apply p-4 rounded-lg border-l-4 my-4;
+      }
+      
+      .callout-info {
+        @apply bg-blue-50 border-blue-400 text-blue-900;
+      }
+      
+      .callout-warning {
+        @apply bg-yellow-50 border-yellow-400 text-yellow-900;
+      }
+      
+      .callout-danger {
+        @apply bg-red-50 border-red-400 text-red-900;
+      }
+      
+      .callout-success {
+        @apply bg-green-50 border-green-400 text-green-900;
+      }
+      
+      .callout-note {
+        @apply bg-gray-50 border-gray-400 text-gray-900;
+      }
     }
   </style>
 </head>
@@ -122,8 +147,8 @@
       </h3>
       <p class="text-sm text-gray-500">2025-07-03</p>
       <!-- <p class="mt-2 text-gray-700"><h3>Code Smells</h3>
-<p><span style="color:brown">Code Smells (โค้ดเริ่มตุ่ย 💩 )</span> คือ 
-สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่า...</p> -->
+<p><span style="color:brown">Code Smells ( โค้ดเริ่มตุ่ย 💩 )</span> คือ 
+สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่...</p> -->
       <a href="post-3.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
     </li>
   
@@ -140,14 +165,13 @@
   
     <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
       <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="post-1.html">My Legacy Code</a>
+        <a href="post-1.html">Coder: ผมจะเป็น Legacy Coder ให้ได้เลย 🧑🏻‍💻</a>
       </h3>
       <p class="text-sm text-gray-500">2025-05-01</p>
       <!-- <p class="mt-2 text-gray-700"><h2>Legacy Code !</h2>
 <p>This is my <strong>first</strong> post!</p>
-<p><code>print('hello')</code></p>
-<h1>&nbsp;</h1>
-<p><img alt="" src="https://p...</p> -->
+<div class="callout callout-info">
+💡 <strong>Info:</strong> Legacy code คือโค้ดท...</p> -->
       <a href="post-1.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
     </li>
   

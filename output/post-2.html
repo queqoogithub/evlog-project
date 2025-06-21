@@ -93,6 +93,31 @@
       p code, li code {
         @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
       }
+
+       /* ✅ Callout styles */
+      .callout {
+        @apply p-4 rounded-lg border-l-4 my-4;
+      }
+      
+      .callout-info {
+        @apply bg-blue-50 border-blue-400 text-blue-900;
+      }
+      
+      .callout-warning {
+        @apply bg-yellow-50 border-yellow-400 text-yellow-900;
+      }
+      
+      .callout-danger {
+        @apply bg-red-50 border-red-400 text-red-900;
+      }
+      
+      .callout-success {
+        @apply bg-green-50 border-green-400 text-green-900;
+      }
+      
+      .callout-note {
+        @apply bg-gray-50 border-gray-400 text-gray-900;
+      }
     }
   </style>
 </head>
@@ -211,7 +236,7 @@
                 self.assertEqual(calculate_discount(price, customer_type), expected)
 </code></pre>
 <p>```</p>
-<h3>เมื่อไหร่ที่เรียกได้ว่าเทสเพียงพอ:</h3>
+<h3>เมื่อไหร่ที่เรียกได้ว่าเทสเพียงพอ ?</h3>
 <ul>
 <li>เมื่อถึงจุดที่แทบจะไม่มี Bugs บน Production</li>
 <li>เมื่อถึงจุดที่การ Refactoring เป็นเรื่องง่าย</li>
