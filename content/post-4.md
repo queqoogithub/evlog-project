@@ -19,7 +19,7 @@ tags: ["intro", "personal"]
 * เปิด terminal ขึ้นมา จากนั้นลองเช็ค version ด้วย ```ollama version```
 * ติดตั้ง [ollama models](https://ollama.com/search) ด้วย ```ollama run model_xxx```
 * จาก step ก่อนหน้า ollama มันจะติดตั้งและเรียกใช้งาน model ที่เราสนใจ
-* ตอนเปิดใหม่ก็ ```ollama list``` จากนั้นเลือก model แล้วก็รัน ```ollama run model_xxx```
+* ตอนเปิด (ใช้งานครั้งถัดไป) ก็ ```ollama list``` จากนั้นเลือก model แล้วก็รัน ```ollama run model_xxx```
 <br>
 
 ![](https://llama-2.ai/wp-content/uploads/2023/12/Ollama-Multimodel-Models.jpeg)
