@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Blog</title>
+  <!-- ✅ Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ✅ Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans m-0 p-0 bg-gray-50 text-gray-800 leading-relaxed;
+      }
+      
+      a {
+        @apply text-blue-500 no-underline hover:underline;
+      }
+
+      /* ✅ List items with emoji bullets */
+      ul li {
+        @apply relative pl-6 mb-2;
+      }
+      
+      ul li::before {
+        content: "🎃";
+        @apply absolute left-0 top-0;
+      }
+    }
+    
+    @layer components {
+      .container {
+        @apply max-w-3xl mx-auto;
+      }
+      
+      h1 {
+        @apply text-5xl mb-8;
+      }
+
+      h2 {
+        @apply text-3xl mb-2;
+      }
+
+      h3 {
+        @apply text-2xl mb-2;
+      }
+
+      img {
+        @apply rounded-lg my-2;
+      }
+
+      /* p {
+        @apply text-xl opacity-90;
+      } */
+      
+      .post-list {
+        @apply list-none p-0;
+      }
+      
+      .post-list {
+        @apply bg-white p-6 rounded-lg mb-4 shadow-md hover:shadow-lg transition-shadow;
+      }
+
+      /* ✅ Code formatting */
+      pre {
+        @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-4;
+      }
+      
+      code {
+        @apply font-mono text-sm;
+      }
+      
+      pre code {
+        @apply bg-transparent text-gray-100;
+      }
+      
+      /* Inline code */
+      p code, li code {
+        @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+      }
+
+       /* ✅ Callout styles */
+      .callout {
+        @apply p-4 rounded-lg border-l-4 my-4;
+      }
+      
+      .callout-info {
+        @apply bg-blue-50 border-blue-400 text-blue-900;
+      }
+      
+      .callout-warning {
+        @apply bg-yellow-50 border-yellow-400 text-yellow-900;
+      }
+      
+      .callout-danger {
+        @apply bg-red-50 border-red-400 text-red-900;
+      }
+      
+      .callout-success {
+        @apply bg-green-50 border-green-400 text-green-900;
+      }
+      
+      .callout-note {
+        @apply bg-gray-50 border-gray-400 text-gray-900;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <nav class="my-4 flex justify-center gap-4 font-medium">
+    <a href="/index.html" class="hover:underline">Home</a>
+    <span>|</span>
+    <a href="/about.html" class="hover:underline">About</a>
+  </nav>
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    
+  <h1>the checken ways 🐣🐥</h1>
+  <div><p><br>
+<img alt="" src="https://img.freepik.com/free-vector/lotus-flower-with-lotus-leaves-water-cartoon-style_1308-65901.jpg?t=st=1747653105~exp=1747656705~hmac=61e36ef99a3fa5997a4d5cf74c7f390e61d9b9deea3c47e17285f151a9b31860" />
+<br></p>
+<h2>Developer Life + The Noble Eightfold Path</h2>
+<p>มรรค ⇒ ทางแห่งความดับทุกข์ ⇒ แนวทางในการปฏิบัติเพื่อพ้นจากทุกข์ เรียกว่า "อริยมรรคมีองค์ 8"</p>
+<p><br></p>
+<table class="w-full border border-gray-300 rounded-lg overflow-hidden mb-8">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border-b p-2 text-left">องค์มรรค 🐣</th>
+      <th class="border-b p-2 text-left">ตัวอย่างในชีวิต Dev 🧑🏻‍💻</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาทิฏฐิ (เข้าใจชีวิตตามความจริง)</td>
+      <td class="border-b p-2">
+        เข้าใจว่า Design Principle เป็นเครื่องมือเพื่อ “ลดปัญหาในอนาคต” ไม่ใช่ของศักดิ์สิทธิ์ ⇒ เห็นถูก ไม่ยึด
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาสังกัปปะ (ตั้งใจในทางที่ถูก)</td>
+      <td class="border-b p-2">
+        นำเสนอหลักการด้วยเมตตา ไม่ใช่เพื่อเอาชนะ ⇒ คิดเพื่อส่วนรวม ไม่ใช่เพื่อพิสูจน์ตัวตน
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาวาจา (พูดชอบ)</td>
+      <td class="border-b p-2">
+        อธิบาย Design Principle อย่างเคารพคนอื่น พูดด้วยเหตุผล ไม่ประชด ไม่ถากถาง
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมากัมมันตะ (การกระทำชอบ ~ มีศีล)</td>
+      <td class="border-b p-2">
+        ทำให้เห็นจริง เช่น เขียนโค้ดดี สอนทีมให้เข้าใจ ไม่ใช่พูดแต่ไม่ทำ
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาอาชีวะ (อาชีพชอบ)</td>
+      <td class="border-b p-2">
+        ทำงานแบบสุจริต ไม่บิดเบือน ไม่ลอบ discredit คนที่ไม่เห็นด้วย
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาวายามะ (พยายามชอบ)</td>
+      <td class="border-b p-2">
+        ไม่หยุดพัฒนาแม้จะถูกปฏิเสธ ไม่หมดศรัทธาในการทำดี พยายามอย่างไม่ทุกข์
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาสติ (ระลึกชอบ)</td>
+      <td class="border-b p-2">
+        ระลึกทันว่า ถ้ามีอารมณ์ขึ้น ⇒ “อัตตา” กำลังเข้าครอบงำ ⇒ หยุดได้ก่อนระเบิดใส่คนอื่น
+      </td>
+    </tr>
+    <tr class="hover:bg-gray-50">
+      <td class="border-b p-2">สัมมาสมาธิ (ตั้งจิตมั่นชอบ)</td>
+      <td class="border-b p-2">
+        ใจแน่วแน่ในสิ่งที่ดี ไม่หวั่นไหว แม้ไม่มีคนตาม ⇒ ใจนิ่ง ไม่หลง ไม่ฟุ้ง ไม่ท้อ
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<div class="callout callout-info">
+  😌 ใช้ความรู้ด้วย “อริยมรรค” ⇒ ใจเบา มีพลัง ทำดีอย่างมั่นคง  <br> 
+  😡 ใช้ความรู้ด้วย “อัตตา” ⇒ ใจหนัก เครียด เสียพลัง 
+</div>
+
+<p><br></p></div>
+  <p>Tags:
+    
+      <a href="/tags/intro.html">intro</a>, 
+    
+      <a href="/tags/personal.html">personal</a>
+    
+  </p>
+
+  </div>
+</body>
+</html>
