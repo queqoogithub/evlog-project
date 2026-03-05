@@ -3,7 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>My Blog</title>
+  <title>{% if post %}{{ post.title }} | {% endif %}💩 EVLOG</title>
+
+  <!-- ✅ Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ BASE_URL }}{% if post %}/{{ post.slug }}.html{% endif %}">
+  <meta property="og:title" content="{% if post %}{{ post.title }}{% else %}📦 QBox{% endif %}">
+  <meta property="og:description"
+    content="{% if post %}{{ post.content[:150] | striptags | trim }}{% else %}Welcome to my personal blog.{% endif %}">
+  <meta property="og:image"
+    content="{% if post %}{% if post.image.startswith('http') %}{{ post.image }}{% else %}{{ BASE_URL }}/{{ post.image }}{% endif %}{% else %}https://images.unsplash.com/photo-1557683316-973673baf926{% endif %}">
   <!-- ✅ Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -3,7 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>My Blog</title>
+  <title>the checken ways 🐣🐥 | 💩 EVLOG</title>
+
+  <!-- ✅ Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evlog-project.vercel.app/post-7.html">
+  <meta property="og:title" content="the checken ways 🐣🐥">
+  <meta property="og:description"
+    content="<img alt="" src="https://img.freepik.com/free-vector/lotus-flower-with-lotus-leaves-water-cartoon-style_1308-65901.jpg?t=st=1747653105~exp=174">
+  <meta property="og:image"
+    content="https://img.freepik.com/free-vector/lotus-flower-with-lotus-leaves-water-cartoon-style_1308-65901.jpg?t=st=1747653105~exp=1747656705~hmac=61e36ef99a3fa5997a4d5cf74c7f390e61d9b9deea3c47e17285f151a9b31860">
   <!-- ✅ Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,8 +212,8 @@
   </nav>
   <div class="max-w-3xl mx-auto px-4 py-8">
     
-  <h1>the checken ways 🐣🐥</h1>
-  <div><p><br>
+<h1>the checken ways 🐣🐥</h1>
+<div><p><br>
 <img alt="" src="https://img.freepik.com/free-vector/lotus-flower-with-lotus-leaves-water-cartoon-style_1308-65901.jpg?t=st=1747653105~exp=1747656705~hmac=61e36ef99a3fa5997a4d5cf74c7f390e61d9b9deea3c47e17285f151a9b31860" />
 <br></p>
 <h2>Developer Life + The Noble Eightfold Path</h2>
@@ -276,13 +285,34 @@
 </div>
 
 <p><br></p></div>
-  <p>Tags:
-    
-      <a href="/tags/intro.html">intro</a>, 
-    
-      <a href="/tags/personal.html">personal</a>
-    
-  </p>
+<p>Tags:
+  
+  <a href="/tags/intro.html">intro</a>, 
+  
+  <a href="/tags/personal.html">personal</a>
+  
+</p>
+
+<!-- ✅ Facebook Share Button -->
+<div class="mt-8 pt-8 border-t border-gray-200">
+  <button onclick="shareToFacebook()"
+    class="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#166fe5] text-white px-4 py-2 rounded-lg font-medium transition-colors shadow-sm">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path
+        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+    แชร์ลง Facebook
+  </button>
+</div>
+
+<script>
+  function shareToFacebook() {
+    // ✅ ใช้ BASE_URL ที่กำหนดไว้แทน window.location.href เพื่อให้ Facebook มองเห็น URL จริง
+    const shareUrl = "https://evlog-project.vercel.app/post-7.html";
+    const encodedUrl = encodeURIComponent(shareUrl);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, 'facebook-share-dialog', 'width=800,height=600');
+  }
+</script>
 
   </div>
 </body>

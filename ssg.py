@@ -11,6 +11,7 @@ from jinja2 import Environment, FileSystemLoader
 CONTENT_DIR = "content"
 OUTPUT_DIR = "output"
 TEMPLATES_DIR = "templates"
+BASE_URL = "https://evlog-project.vercel.app" # 💡 URL สำหรับ GoLive (Vercel)
 
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 post_template = env.get_template("post.html")
@@ -55,7 +56,7 @@ posts.sort(key=lambda p: p["date"], reverse=True)
 # 2. สร้าง output/slug.html
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 for post in posts:
-    rendered = post_template.render(post=post)
+    rendered = post_template.render(post=post, BASE_URL=BASE_URL)
     with open(os.path.join(OUTPUT_DIR, f"{post['slug']}.html"), "w") as f:
         f.write(rendered)
 
@@ -64,7 +65,7 @@ tag_dir = os.path.join(OUTPUT_DIR, "tags")
 os.makedirs(tag_dir, exist_ok=True)
 
 for tag, tagged_posts in tags_dict.items():
-    rendered = tag_template.render(tag=tag, posts=tagged_posts)
+    rendered = tag_template.render(tag=tag, posts=tagged_posts, BASE_URL=BASE_URL)
     with open(os.path.join(tag_dir, f"{tag}.html"), "w") as f:
         f.write(rendered)
 
@@ -117,13 +118,14 @@ for page in range(total_pages):
         posts=page_posts,
         current_page=page + 1,
         total_pages=total_pages,
+        BASE_URL=BASE_URL
     )
     with open(os.path.join(OUTPUT_DIR, filename), "w", encoding="utf-8") as f:
         f.write(output)
 
 # 6. สร้างหน้า about.html
 about_template = env.get_template("about.html")
-about_output = about_template.render()
+about_output = about_template.render(BASE_URL=BASE_URL)
 with open(os.path.join(OUTPUT_DIR, "about.html"), "w", encoding="utf-8") as f:
     f.write(about_output)
 

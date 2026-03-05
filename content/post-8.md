@@ -4,7 +4,7 @@ date: "2026-03-05"
 tags: ["personal"]
 ---
 
-<span style="color:brown">High Cohesion, Low Coupling</span> →
+<span style="color:violet">High Cohesion, Low Coupling</span> →
 Design Pattern ที่เน้นให้โค้ดมีความสัมพันธ์กันภายในโมดูลสูง (High Cohesion) และมีความเชื่อมโยงระหว่างโมดูลต่ำ (Low Coupling)
 
 ![](https://png.pngtree.com/png-clipart/20230928/original/pngtree-cute-spaghetti-cartoon-illustration-png-image_13005549.png)
@@ -72,7 +72,7 @@ class InvoiceGenerator:
 
 ### ทำไมแยกเป็น class แล้วช่วยได้ ?
 
-* หลักๆ คือเรื่อง **single responsibility**
+* หลักๆ คือเรื่อง <b>single responsibility</b>
 * ทำให้โค้ดอ่านและเข้าใจง่าย
 * ลดโอกาสเกิด bugs (เพราะแต่ละ class จะทำแค่หน้าที่ของตัวเอง ไม่ยุ่งกับ class อื่น)
 * เพิ่มประสิทธิภาพการพัฒนา (dev ตัดสินใจง่ายขึ้นว่าต้องพัฒนา หรือ แก้ส่วนไหน)
