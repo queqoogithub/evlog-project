@@ -2,45 +2,48 @@
 {% block content %}
 
 <!-- ✅ Hero Section -->
-<section class="bg-blue-600 text-white py-24 px-4 rounded-xl mb-10 font-prompt">
-  <div class="text-center max-w-2xl mx-auto">
-    <h1 class="text-4xl font-bold mb-2">Welcome to Qool Blog</h1>
-    <p class="text-lg opacity-90">สวัสดี ชาวโลก</p>
+<section
+  class="bg-cover bg-center text-white py-24 px-4 rounded-xl mb-10 font-prompt relative overflow-hidden shadow-lg"
+  style="background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop');">
+  <div class="absolute inset-0 bg-blue-900/30"></div>
+  <div
+    class="relative text-center max-w-2xl mx-auto z-10 backdrop-blur-sm bg-white/10 p-8 rounded-2xl border border-white/20">
+    <h1 class="text-4xl font-bold mb-2 drop-shadow-lg">Welcome to Qool Blog</h1>
+    <p class="text-lg text-white/90 drop-shadow-md">สวัสดี ชาวโลก</p>
   </div>
 </section>
 
 <!-- ✅ แสดงโพสต์ -->
-<ul class="space-y-6">
+<ul class="space-y-6 list-none">
   {% for post in posts %}
-    <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-      <h3 class="text-xl font-bold text-blue-600 hover:underline">
-        <a href="{{ post.slug }}.html">{{ post.title }}</a>
-      </h3>
-      <p class="text-sm text-gray-500">{{ post.date.strftime('%Y-%m-%d') }}</p>
-      <!-- <p class="mt-2 text-gray-700">{{ post.content[:150] | safe }}...</p> -->
-      <a href="{{ post.slug }}.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
-    </li>
+  <li class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+    <h3 class="text-xl font-bold text-blue-600 hover:underline">
+      <a href="{{ post.slug }}.html">{{ post.title }}</a>
+    </h3>
+    <p class="text-sm text-gray-500">{{ post.date.strftime('%Y-%m-%d') }}</p>
+    <!-- <p class="mt-2 text-gray-700">{{ post.content[:150] | safe }}...</p> -->
+    <a href="{{ post.slug }}.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
+  </li>
   {% endfor %}
 </ul>
 
 <!-- ✅ Pagination -->
 <div class="flex justify-center mt-10 space-x-4 text-sm">
   {% if current_page > 1 %}
-    <a href="{{ 'index.html' if current_page == 2 else 'page' ~ (current_page - 1) ~ '.html' }}"
-       class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">&laquo; Previous</a>
+  <a href="{{ 'index.html' if current_page == 2 else 'page' ~ (current_page - 1) ~ '.html' }}"
+    class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">&laquo; Previous</a>
   {% endif %}
 
   {% for page_num in range(1, total_pages + 1) %}
-    <a href="{{ 'index.html' if page_num == 1 else 'page' ~ page_num ~ '.html' }}"
-       class="px-3 py-1 rounded {{ 'bg-blue-600 text-white' if page_num == current_page else 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
-      {{ page_num }}
-    </a>
+  <a href="{{ 'index.html' if page_num == 1 else 'page' ~ page_num ~ '.html' }}"
+    class="px-3 py-1 rounded {{ 'bg-blue-600 text-white' if page_num == current_page else 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
+    {{ page_num }}
+  </a>
   {% endfor %}
 
-  {% if current_page < total_pages %}
-    <a href="page{{ current_page + 1 }}.html"
-       class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next &raquo;</a>
-  {% endif %}
+  {% if current_page < total_pages %} <a href="page{{ current_page + 1 }}.html"
+    class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next &raquo;</a>
+    {% endif %}
 </div>
 
 {% endblock %}
