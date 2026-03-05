@@ -145,173 +145,165 @@
 </ul>
 <p>&nbsp;</p>
 <p>❌ โค้ดซ้ำ</p>
-<p>```</p>
-<pre><code>def calculate_rectangle_area(length, width):
-    if length &lt;= 0 or width &lt;= 0:
-        raise ValueError("Length and width must be positive")
-    return length * width
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_rectangle_area</span><span class="ss">(</span><span class="nv">length</span>,<span class="w"> </span><span class="nv">width</span><span class="ss">)</span>:
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">length</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">width</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>:
+<span class="w">            </span><span class="nv">raise</span><span class="w"> </span><span class="nv">ValueError</span><span class="ss">(</span><span class="s2">&quot;Length and width must be positive&quot;</span><span class="ss">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">width</span>
 
-def calculate_triangle_area(base, height):
-    if base &lt;= 0 or height &lt;= 0:
-        raise ValueError("Base and height must be positive")
-    return 0.5 * base * height
+<span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_triangle_area</span><span class="ss">(</span><span class="nv">base</span>,<span class="w"> </span><span class="nv">height</span><span class="ss">)</span>:
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">base</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">height</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>:
+<span class="w">            </span><span class="nv">raise</span><span class="w"> </span><span class="nv">ValueError</span><span class="ss">(</span><span class="s2">&quot;Base and height must be positive&quot;</span><span class="ss">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">height</span>
 
-def calculate_circle_area(radius):
-    if radius &lt;= 0:
-        raise ValueError("Radius must be positive")
-    return 3.14159 * radius * radius
-</code></pre>
-<p>```</p>
+<span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_circle_area</span><span class="ss">(</span><span class="nv">radius</span><span class="ss">)</span>:
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>:
+<span class="w">            </span><span class="nv">raise</span><span class="w"> </span><span class="nv">ValueError</span><span class="ss">(</span><span class="s2">&quot;Radius must be positive&quot;</span><span class="ss">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>.<span class="mi">14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">radius</span>
+</code></pre></div>
+
 <p>✅ การแก้ไข: สร้าง Class หรือ Function เพื่อ Reuse มัน</p>
-<p>```</p>
-<pre><code>def _validate_positive_values(*values):
-    if any(value &lt;= 0 for value in values):
-        raise ValueError("All values must be positive")
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">_validate_positive_values</span><span class="ss">(</span><span class="o">*</span><span class="nv">values</span><span class="ss">)</span>:
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">any</span><span class="ss">(</span><span class="nv">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">values</span><span class="ss">)</span>:
+<span class="w">            </span><span class="nv">raise</span><span class="w"> </span><span class="nv">ValueError</span><span class="ss">(</span><span class="s2">&quot;All values must be positive&quot;</span><span class="ss">)</span>
 
-def calculate_rectangle_area(length, width):
-    _validate_positive_values(length, width)
-    return length * width
+<span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_rectangle_area</span><span class="ss">(</span><span class="nv">length</span>,<span class="w"> </span><span class="nv">width</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">_validate_positive_values</span><span class="ss">(</span><span class="nv">length</span>,<span class="w"> </span><span class="nv">width</span><span class="ss">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">width</span>
 
-def calculate_triangle_area(base, height):
-    _validate_positive_values(base, height)
-    return 0.5 * base * height
+<span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_triangle_area</span><span class="ss">(</span><span class="nv">base</span>,<span class="w"> </span><span class="nv">height</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">_validate_positive_values</span><span class="ss">(</span><span class="nv">base</span>,<span class="w"> </span><span class="nv">height</span><span class="ss">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">height</span>
 
-def calculate_circle_area(radius):
-    _validate_positive_values(radius)
-    return 3.14159 * radius * radius
-</code></pre>
-<p>```</p>
+<span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_circle_area</span><span class="ss">(</span><span class="nv">radius</span><span class="ss">)</span>:
+<span class="w">        </span><span class="nv">_validate_positive_values</span><span class="ss">(</span><span class="nv">radius</span><span class="ss">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>.<span class="mi">14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">radius</span>
+</code></pre></div>
+
 <p>❌ Class หรือ Function ใหญ่ (ยาว) ไป</p>
-<p>```</p>
-<pre><code>class User:
-    def __init__(self, name, email):
-        self.name = name
-        self.email = email
-        self.orders = []
+<div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="n">User:</span>
+        <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="nb">name</span>, <span class="n">email</span>):
+            <span class="nb">self</span>.<span class="nb">name</span> = <span class="nb">name</span>
+            <span class="nb">self</span>.<span class="n">email</span> = <span class="n">email</span>
+            <span class="nb">self</span>.<span class="n">orders</span> = []
 
-    def validate_email(self):
-        return re.match(r'^[^@]+@[^@]+\.[^@]+$', self.email)
+        <span class="n">def</span> <span class="n">validate_email</span>(<span class="nb">self</span>):
+            <span class="k">return</span> <span class="nb">re</span>.<span class="nb">match</span>(<span class="n">r&#39;</span>^[^@]+@[^@]+\.[^@]+<span class="nv">$&#39;</span>, <span class="nb">self</span>.<span class="n">email</span>)
 
-    def send_email(self, message):
-        pass
+        <span class="n">def</span> <span class="n">send_email</span>(<span class="nb">self</span>, <span class="nb">message</span>):
+            <span class="nb">pass</span>
 
-    def add_order(self, order):
-        self.orders.append(order)
+        <span class="n">def</span> <span class="n">add_order</span>(<span class="nb">self</span>, <span class="n">order</span>):
+            <span class="nb">self</span>.<span class="n">orders</span>.<span class="nb">append</span>(<span class="n">order</span>)
 
-    def calculate_total_spent(self):
-        return sum(order.total for order in self.orders)
+        <span class="n">def</span> <span class="n">calculate_total_spent</span>(<span class="nb">self</span>):
+            <span class="k">return</span> <span class="nb">sum</span>(<span class="n">order</span>.<span class="nb">total</span> <span class="k">for</span> <span class="n">order</span> <span class="nb">in</span> <span class="nb">self</span>.<span class="n">orders</span>)
 
-    def generate_receipt(self, order):
-        pass
+        <span class="n">def</span> <span class="n">generate_receipt</span>(<span class="nb">self</span>, <span class="n">order</span>):
+            <span class="nb">pass</span>
 
-    def save_to_database(self):
-        pass
-</code></pre>
-<p>```</p>
+        <span class="n">def</span> <span class="n">save_to_database</span>(<span class="nb">self</span>):
+            <span class="nb">pass</span>
+</code></pre></div>
+
 <p>✅ การแก้ไข: แตก Class หรือ Function ออกตามหน้าที่ย่อยๆ</p>
-<p>```</p>
-<pre><code>class User:
-    def __init__(self, name, email):
-        self.name = name
-        self.email = email
-        self.orders = []
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="k">User</span><span class="err">:</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">orders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span>
 
-    def add_order(self, order):
-        self.orders.append(order)
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">add_order</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="k">order</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">orders</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="k">order</span><span class="p">)</span>
 
-class EmailValidator:
-    @staticmethod
-    def is_valid(email):
-        return re.match(r'^[^@]+@[^@]+\.[^@]+$', email) is not None
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nl">EmailValidator</span><span class="p">:</span>
+<span class="w">        </span><span class="nv">@staticmethod</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">is_valid</span><span class="p">(</span><span class="n">email</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">re</span><span class="p">.</span><span class="k">match</span><span class="p">(</span><span class="n">r</span><span class="s1">&#39;^[^@]+@[^@]+\.[^@]+$&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">None</span>
 
-class EmailService:
-    @staticmethod
-    def send_email(email, message):
-        pass
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nl">EmailService</span><span class="p">:</span>
+<span class="w">        </span><span class="nv">@staticmethod</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">send_email</span><span class="p">(</span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">pass</span>
 
-class OrderAnalyzer:
-    @staticmethod
-    def calculate_total_spent(orders):
-        return sum(order.total for order in orders)
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nl">OrderAnalyzer</span><span class="p">:</span>
+<span class="w">        </span><span class="nv">@staticmethod</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">calculate_total_spent</span><span class="p">(</span><span class="n">orders</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="k">order</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">orders</span><span class="p">)</span>
 
-class ReceiptGenerator:
-    @staticmethod
-    def generate_receipt(order):
-        pass
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nl">ReceiptGenerator</span><span class="p">:</span>
+<span class="w">        </span><span class="nv">@staticmethod</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">generate_receipt</span><span class="p">(</span><span class="k">order</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">pass</span>
 
-class UserRepository:
-    @staticmethod
-    def save_user(user):
-        pass
-</code></pre>
-<p>```</p>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nl">UserRepository</span><span class="p">:</span>
+<span class="w">        </span><span class="nv">@staticmethod</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">save_user</span><span class="p">(</span><span class="k">user</span><span class="p">)</span><span class="err">:</span>
+<span class="w">            </span><span class="n">pass</span>
+</code></pre></div>
+
 <p>❌ Parameter ยาวปายยยย...ยยย</p>
-<p>```</p>
-<pre><code>def create_user_account(first_name, last_name, email, phone, address, 
-                    city, state, zip_code, country, date_of_birth, 
-                    preferred_language, marketing_consent):
-    pass
-</code></pre>
-<p>```</p>
+<div class="codehilite"><pre><span></span><code>    def create_user_account(first_name, last_name, email, phone, address, 
+                        city, state, zip_code, country, date_of_birth, 
+                        preferred_language, marketing_consent):
+        pass
+</code></pre></div>
+
 <p>✅ การแก้ไข: แตก Class ย่อยตามประเภท Parameters</p>
-<p>```</p>
-<pre><code>from dataclasses import dataclass
-from typing import Optional
+<div class="codehilite"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
-@dataclass
-class UserProfile:
-    first_name: str
-    last_name: str
-    email: str
-    phone: Optional[str] = None
-    date_of_birth: Optional[str] = None
+    <span class="nd">@dataclass</span>
+    <span class="k">class</span> <span class="nc">UserProfile</span><span class="p">:</span>
+        <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">phone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">date_of_birth</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-@dataclass
-class UserAddress:
-    address: str
-    city: str
-    state: str
-    zip_code: str
-    country: str
+    <span class="nd">@dataclass</span>
+    <span class="k">class</span> <span class="nc">UserAddress</span><span class="p">:</span>
+        <span class="n">address</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">city</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">state</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">zip_code</span><span class="p">:</span> <span class="nb">str</span>
+        <span class="n">country</span><span class="p">:</span> <span class="nb">str</span>
 
-@dataclass
-class UserPreferences:
-    preferred_language: str = 'en'
-    marketing_consent: bool = False
+    <span class="nd">@dataclass</span>
+    <span class="k">class</span> <span class="nc">UserPreferences</span><span class="p">:</span>
+        <span class="n">preferred_language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+        <span class="n">marketing_consent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
-def create_user_account(profile: UserProfile, 
-                    address: UserAddress, 
-                    preferences: UserPreferences):
-    pass
-</code></pre>
-<p>```</p>
+    <span class="k">def</span> <span class="nf">create_user_account</span><span class="p">(</span><span class="n">profile</span><span class="p">:</span> <span class="n">UserProfile</span><span class="p">,</span> 
+                        <span class="n">address</span><span class="p">:</span> <span class="n">UserAddress</span><span class="p">,</span> 
+                        <span class="n">preferences</span><span class="p">:</span> <span class="n">UserPreferences</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div>
+
 <p>❌ Magic Number (ตัวเลขลึกลับ มีที่ไป ... แต่ไม่มีที่มา)</p>
-<p>```</p>
-<pre><code>def calculate_discount(amount):
-    if amount &gt; 1000:
-        return amount * 0.1
-    elif amount &gt; 500:
-        return amount * 0.05
-    return 0
-</code></pre>
-<p>```</p>
-<p>✅ การแก้ไข: กำหนดมันเป็นค่าคงที่</p>
-<p>```</p>
-<pre><code># constants
-PREMIUM_THRESHOLD = 1000
-STANDARD_THRESHOLD = 500
-PREMIUM_DISCOUNT_RATE = 0.1
-STANDARD_DISCOUNT_RATE = 0.05
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">calculate_discount</span><span class="ss">(</span><span class="nv">amount</span><span class="ss">)</span>:
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span>:
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">1</span>
+<span class="w">        </span><span class="nv">elif</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">500</span>:
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">05</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
 
-def calculate_discount(amount):
-    if amount &gt; PREMIUM_THRESHOLD:
-        return amount * PREMIUM_DISCOUNT_RATE
-    elif amount &gt; STANDARD_THRESHOLD:
-        return amount * STANDARD_DISCOUNT_RATE
-    return 0
-</code></pre>
-<p>```
-&nbsp;</p>
+<p>✅ การแก้ไข: กำหนดมันเป็นค่าคงที่</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="c1"># constants</span>
+<span class="w">    </span><span class="n">PREMIUM_THRESHOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span>
+<span class="w">    </span><span class="n">STANDARD_THRESHOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span>
+<span class="w">    </span><span class="n">PREMIUM_DISCOUNT_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="w">    </span><span class="n">STANDARD_DISCOUNT_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">calculate_discount</span><span class="p">(</span><span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">PREMIUM_THRESHOLD</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PREMIUM_DISCOUNT_RATE</span>
+<span class="w">        </span><span class="k">elif</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">STANDARD_THRESHOLD</span><span class="p">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">STANDARD_DISCOUNT_RATE</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+
+<p>&nbsp;</p>
 <hr />
 <p>&nbsp;</p>
 <p>ถ้าโค้ดของคุณมีลักษณะ ❌ ดังกล่าว นั่นแสดงว่าโค้ดของคุณเริ่มส่งกลิ่น (ตุ่ย) แล้วหละ 💩💩💩</p>

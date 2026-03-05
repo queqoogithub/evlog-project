@@ -1,5 +1,6 @@
 import os
 import shutil
+import re
 import markdown
 import frontmatter
 from math import ceil
@@ -24,18 +25,23 @@ for filename in os.listdir(CONTENT_DIR):
         filepath = os.path.join(CONTENT_DIR, filename)
         post = frontmatter.load(filepath)
         
-        html_body = markdown.markdown(post.content)
+        html_body = markdown.markdown(post.content, extensions=['fenced_code', 'tables', 'codehilite'])
         slug = os.path.splitext(filename)[0]
 
         # แปลงวันที่จาก string -> datetime
         date_str = post.get("date", "2000-01-01")
         date = datetime.strptime(date_str, "%Y-%m-%d")
 
+        # สกัดรูปภาพแรก (ถ้ามี)
+        image_match = re.search(r'!\[.*?\]\((.*?)\)', post.content)
+        first_image = image_match.group(1) if image_match else "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop"
+
         post_data = {
             "title": post.get("title", "Untitled"),
             "tags": post.get("tags", []),
             "date": date,
             "content": html_body,
+            "image": first_image,
             "slug": slug
         }
         posts.append(post_data)

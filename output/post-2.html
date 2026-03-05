@@ -147,42 +147,40 @@
 </ul>
 <p><br></p>
 <p>Trivial Code</p>
-<p>```</p>
-<pre><code>def process_status_code(status_code):
-    """
-    Processes a given HTTP status code.
-    """
-    if status_code &gt;= 200 and status_code &lt; 300:
-        return "SUCCESS"
-    elif status_code &gt;= 400 and status_code &lt; 500:
-        return "CLIENT_ERROR"
-    elif status_code &gt;= 500 and status_code &lt; 600:
-        return "SERVER_ERROR"
-    else:
-        return "UNKNOWN"
-</code></pre>
-<p>```</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">def</span><span class="w"> </span><span class="nv">process_status_code</span><span class="ss">(</span><span class="nv">status_code</span><span class="ss">)</span>:
+<span class="w">        </span><span class="s2">&quot;&quot;</span><span class="err">&quot;</span>
+<span class="err">        Processes a given HTTP status code.</span>
+<span class="w">        </span><span class="s2">&quot;&quot;</span><span class="err">&quot;</span>
+<span class="err">        if status_code &gt;= 200 and status_code &lt; 300:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>
+<span class="w">        </span><span class="nv">elif</span><span class="w"> </span><span class="nv">status_code</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">status_code</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">500</span>:
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;CLIENT_ERROR&quot;</span>
+<span class="w">        </span><span class="nv">elif</span><span class="w"> </span><span class="nv">status_code</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">status_code</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">600</span>:
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;SERVER_ERROR&quot;</span>
+<span class="w">        </span><span class="k">else</span>:
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;UNKNOWN&quot;</span>
+</code></pre></div>
+
 <p>❌ Trivial Test ▶️ การเขียนเทสเพื่อให้ครอบคลุมทุก <code>if | elif | else</code> statement นั้นง่ายมากๆ</p>
-<p>```</p>
-<pre><code>class TestStatusCodeProcessor(unittest.TestCase):
-    def test_success_status(self):
-        self.assertEqual(process_status_code(200), "SUCCESS")
-        self.assertEqual(process_status_code(299), "SUCCESS")
+<div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="n">TestStatusCodeProcessor</span>(<span class="n">unittest</span>.<span class="n">TestCase</span>):
+        <span class="n">def</span> <span class="n">test_success_status</span>(<span class="nb">self</span>):
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">200</span>), <span class="s">&quot;SUCCESS&quot;</span>)
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">299</span>), <span class="s">&quot;SUCCESS&quot;</span>)
 
-    def test_client_error_status(self):
-        self.assertEqual(process_status_code(400), "CLIENT_ERROR")
-        self.assertEqual(process_status_code(404), "CLIENT_ERROR")
+        <span class="n">def</span> <span class="n">test_client_error_status</span>(<span class="nb">self</span>):
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">400</span>), <span class="s">&quot;CLIENT_ERROR&quot;</span>)
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">404</span>), <span class="s">&quot;CLIENT_ERROR&quot;</span>)
 
-    def test_server_error_status(self):
-        self.assertEqual(process_status_code(500), "SERVER_ERROR")
-        self.assertEqual(process_status_code(503), "SERVER_ERROR")
+        <span class="n">def</span> <span class="n">test_server_error_status</span>(<span class="nb">self</span>):
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">500</span>), <span class="s">&quot;SERVER_ERROR&quot;</span>)
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">503</span>), <span class="s">&quot;SERVER_ERROR&quot;</span>)
 
-    def test_unknown_status(self):
-        self.assertEqual(process_status_code(100), "UNKNOWN")
-        self.assertEqual(process_status_code(300), "UNKNOWN")
-        self.assertEqual(process_status_code(600), "UNKNOWN")
-</code></pre>
-<p>```</p>
+        <span class="n">def</span> <span class="n">test_unknown_status</span>(<span class="nb">self</span>):
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">100</span>), <span class="s">&quot;UNKNOWN&quot;</span>)
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">300</span>), <span class="s">&quot;UNKNOWN&quot;</span>)
+            <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">process_status_code</span>(<span class="mi">600</span>), <span class="s">&quot;UNKNOWN&quot;</span>)
+</code></pre></div>
+
 <h3>คุณภาพสำคัญกว่าปริมาณ:</h3>
 <ul>
 <li>ควรเน้นที่ Behavior หรือ จุดที่ Complexity สูง ไม่ใช่แค่การเขียนเทสเพื่อให้ครอบคลุมโค้ดมากที่สุด และหากการเปลี่ยนแปลงโค้ดเพียงเล็กน้อย แล้วต้องแก้ไขเทสจำนวนมาก อาจแสดงว่าเทสมีความซ้ำซ้อนกันอยู่ (Brittle Test)</li>
@@ -190,56 +188,53 @@
 </ul>
 <p><br></p>
 <p>ตัวอย่าง: ฟังก์ชั่นคำนวณส่วนลด</p>
-<p>```</p>
-<pre><code>def calculate_discount(price: float, customer_type: str) -&gt; float:
-    if customer_type == "VIP":
-        return price * 0.8
-    elif customer_type == "Regular":
-        return price * 0.9
-    else:
-        return price
-</code></pre>
-<p>```</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">calculate_discount</span><span class="p">(</span><span class="n">price</span><span class="o">:</span><span class="w"> </span><span class="n">float</span><span class="p">,</span><span class="w"> </span><span class="n">customer_type</span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">float</span><span class="o">:</span>
+<span class="w">        </span><span class="nf">if</span><span class="w"> </span><span class="n">customer_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;VIP&quot;</span><span class="o">:</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.8</span>
+<span class="w">        </span><span class="n">elif</span><span class="w"> </span><span class="n">customer_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Regular&quot;</span><span class="o">:</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9</span>
+<span class="w">        </span><span class="n">else</span><span class="o">:</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="n">price</span>
+</code></pre></div>
+
 <p>❌ TC สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!</p>
-<p>```</p>
-<pre><code>class TestCalculateDiscountVerbose(unittest.TestCase):
-    def test_vip_customer(self):
-        self.assertEqual(calculate_discount(100.0, "VIP"), 80.0)
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">class</span><span class="w"> </span><span class="n">TestCalculateDiscountVerbose</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">)</span><span class="o">:</span>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_vip_customer</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VIP&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">80.0</span><span class="p">)</span>
 
-    def test_regular_customer(self):
-        self.assertEqual(calculate_discount(100.0, "Regular"), 90.0)
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_regular_customer</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Regular&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">90.0</span><span class="p">)</span>
 
-    def test_unknown_customer(self):
-        self.assertEqual(calculate_discount(100.0, "Other"), 100.0)
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_unknown_customer</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Other&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">100.0</span><span class="p">)</span>
 
-    def test_zero_price(self):
-        self.assertEqual(calculate_discount(0.0, "VIP"), 0.0)
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_zero_price</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VIP&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span>
 
-    def test_negative_price(self):
-        self.assertEqual(calculate_discount(-100.0, "Regular"), -90.0)
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_negative_price</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="o">-</span><span class="mf">100.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Regular&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">-</span><span class="mf">90.0</span><span class="p">)</span>
 
-    def test_none_customer(self):
-        with self.assertRaises(TypeError):
-            calculate_discount(100.0)
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_none_customer</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">with</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">TypeError</span><span class="p">)</span><span class="o">:</span>
+<span class="w">                </span><span class="n">calculate_discount</span><span class="p">(</span><span class="mf">100.0</span><span class="p">)</span>
 
-    def test_integer_price(self):
-        self.assertEqual(calculate_discount(200, "VIP"), 160.0)
-</code></pre>
-<p>```</p>
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">test_integer_price</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mh">200</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VIP&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">160.0</span><span class="p">)</span>
+</code></pre></div>
+
 <p>✅ TC น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม <code>customer_type</code></p>
-<p>```</p>
-<pre><code>class TestCalculateDiscount(unittest.TestCase):
-    def test_customer_type_discount(self):
-        test_cases = [
-            ("VIP", 100.0, 80.0),
-            ("Regular", 100.0, 90.0),
-            ("Other", 100.0, 100.0),
-        ]
-        for customer_type, price, expected in test_cases:
-            with self.subTest(customer_type=customer_type):
-                self.assertEqual(calculate_discount(price, customer_type), expected)
-</code></pre>
-<p>```</p>
+<div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="n">TestCalculateDiscount</span>(<span class="n">unittest</span>.<span class="n">TestCase</span>):
+        <span class="n">def</span> <span class="n">test_customer_type_discount</span>(<span class="nb">self</span>):
+            <span class="n">test_cases</span> = [
+                (<span class="s">&quot;VIP&quot;</span>, <span class="mf">100.0</span>, <span class="mf">80.0</span>),
+                (<span class="s">&quot;Regular&quot;</span>, <span class="mf">100.0</span>, <span class="mf">90.0</span>),
+                (<span class="s">&quot;Other&quot;</span>, <span class="mf">100.0</span>, <span class="mf">100.0</span>),
+            ]
+            <span class="k">for</span> <span class="n">customer_type</span>, <span class="n">price</span>, <span class="nb">expected</span> <span class="nb">in</span> <span class="n">test_cases:</span>
+                <span class="k">with</span> <span class="nb">self</span>.<span class="n">subTest</span>(<span class="n">customer_type</span>=<span class="n">customer_type</span>):
+                    <span class="nb">self</span>.<span class="n">assertEqual</span>(<span class="n">calculate_discount</span>(<span class="n">price</span>, <span class="n">customer_type</span>), <span class="nb">expected</span>)
+</code></pre></div>
+
 <h3>เมื่อไหร่ที่เรียกได้ว่าเทสเพียงพอ ?</h3>
 <ul>
 <li>เมื่อถึงจุดที่แทบจะไม่มี Bugs บน Production</li>
