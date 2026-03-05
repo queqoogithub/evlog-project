@@ -11,8 +11,7 @@
     <div class="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/30 transition-colors"></div>
     <div
       class="relative text-center max-w-2xl mx-auto z-10 backdrop-blur-sm bg-white/10 p-8 rounded-2xl border border-white/20">
-      <h1 class="text-4xl font-bold mb-2 drop-shadow-lg">{{ latest_post.title }}</h1>
-      <p class="text-lg text-white/90 drop-shadow-md">Latest Post</p>
+      <h1 class="text-4xl font-bold mb-2 drop-shadow-lg leading-tight">{{ latest_post.title }}</h1>
     </div>
   </section>
 </a>
@@ -38,7 +37,7 @@
     </h3>
     <p class="text-sm text-gray-500">{{ post.date.strftime('%Y-%m-%d') }}</p>
     <!-- <p class="mt-2 text-gray-700">{{ post.content[:150] | safe }}...</p> -->
-    <a href="{{ post.slug }}.html" class="mt-2 inline-block text-blue-500 hover:underline">Read more →</a>
+
   </li>
   {% endfor %}
 </ul>

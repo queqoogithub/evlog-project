@@ -24,7 +24,7 @@ tags: ["personal"]
 
 Trivial Code
 
-```
+```python
 
     def process_status_code(status_code):
         """
@@ -42,7 +42,7 @@ Trivial Code
 
 ❌ Trivial Test ▶️ การเขียนเทสเพื่อให้ครอบคลุมทุก ```if | elif | else``` statement นั้นง่ายมากๆ
 
-```
+```python
 
     class TestStatusCodeProcessor(unittest.TestCase):
         def test_success_status(self):
@@ -72,7 +72,7 @@ Trivial Code
 
 ตัวอย่าง: ฟังก์ชั่นคำนวณส่วนลด
 
-```
+```python
 
     def calculate_discount(price: float, customer_type: str) -> float:
         if customer_type == "VIP":
@@ -85,7 +85,7 @@ Trivial Code
 
 ❌ TC สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!
 
-```
+```python
 
     class TestCalculateDiscountVerbose(unittest.TestCase):
         def test_vip_customer(self):
@@ -113,7 +113,7 @@ Trivial Code
 
 ✅ TC น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม ```customer_type```
 
-```
+```python
 
     class TestCalculateDiscount(unittest.TestCase):
         def test_customer_type_discount(self):

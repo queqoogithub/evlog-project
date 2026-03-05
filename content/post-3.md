@@ -22,7 +22,7 @@ tags: ["personal"]
 
 ❌ โค้ดซ้ำ
 
-```
+```python
 
     def calculate_rectangle_area(length, width):
         if length <= 0 or width <= 0:
@@ -42,7 +42,7 @@ tags: ["personal"]
 
 ✅ การแก้ไข: สร้าง Class หรือ Function เพื่อ Reuse มัน
 
-```
+```python
 
     def _validate_positive_values(*values):
         if any(value <= 0 for value in values):
@@ -63,7 +63,7 @@ tags: ["personal"]
 
 ❌ Class หรือ Function ใหญ่ (ยาว) ไป
 
-```
+```python
 
     class User:
         def __init__(self, name, email):
@@ -92,7 +92,7 @@ tags: ["personal"]
 
 ✅ การแก้ไข: แตก Class หรือ Function ออกตามหน้าที่ย่อยๆ
 
-```
+```python
 
     class User:
         def __init__(self, name, email):
@@ -131,7 +131,7 @@ tags: ["personal"]
 
 ❌ Parameter ยาวปายยยย...ยยย
 
-```
+```python
 
     def create_user_account(first_name, last_name, email, phone, address, 
                         city, state, zip_code, country, date_of_birth, 
@@ -141,7 +141,7 @@ tags: ["personal"]
 
 ✅ การแก้ไข: แตก Class ย่อยตามประเภท Parameters
 
-```
+```python
 
     from dataclasses import dataclass
     from typing import Optional
@@ -175,7 +175,7 @@ tags: ["personal"]
 
 ❌ Magic Number (ตัวเลขลึกลับ มีที่ไป ... แต่ไม่มีที่มา)
 
-```
+```python
 
     def calculate_discount(amount):
         if amount > 1000:
@@ -187,7 +187,7 @@ tags: ["personal"]
 
 ✅ การแก้ไข: กำหนดมันเป็นค่าคงที่
 
-```
+```python
 
     # constants
     PREMIUM_THRESHOLD = 1000
