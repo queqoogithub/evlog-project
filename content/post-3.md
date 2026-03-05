@@ -7,7 +7,7 @@ tags: ["personal"]
 ### Code Smells
 
 <span style="color:brown">Code Smells ( โค้ดเริ่มตุ่ย 💩 )</span> คือ 
-สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่านไม่รู้เรื่อง) ถึงแม้ว่าโค้ดจะยังทำงานได้ปกติ แต่การมี Code Smells จะทำให้โค้ดมีปัญหาในระยะยาว ... สะสมเป็น ```Tech Debt```
+สัญญาณเตือนว่าโค้ดเริ่มมีปัญหาบางอย่าง (เช่น โค้ดเริ่มอ่านไม่รู้เรื่อง) ถึงแม้ว่าโค้ดจะยังทำงานได้ปกติ แต่การมี Code Smells จะทำให้โค้ดมีปัญหาในระยะยาว ... สะสมเป็น <b>Tech Debt</b>
 
 ![](https://media.licdn.com/dms/image/v2/D4D12AQGi6c9pRsiNYQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1734422913181?e=2147483647&v=beta&t=cJFiW6zGmsy-WQz-gDtmhR0k2TrehA3CiThwyudt4GM)
 
@@ -202,13 +202,10 @@ tags: ["personal"]
             return amount * STANDARD_DISCOUNT_RATE
         return 0
 ```
-&nbsp;
-
----
 
 &nbsp;
 
-ถ้าโค้ดของคุณมีลักษณะ ❌ ดังกล่าว นั่นแสดงว่าโค้ดของคุณเริ่มส่งกลิ่น (ตุ่ย) แล้วหละ 💩💩💩
+ถ้าโค้ดของเรามีลักษณะ (❌) ดังกล่าว นั่นแสดงว่าโค้ดของเราเริ่มส่งกลิ่น (ตุ่ย) แล้วหละ 💩💩💩
 
 &nbsp;
 
