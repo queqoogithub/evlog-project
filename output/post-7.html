@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>My Blog</title>
@@ -33,14 +34,13 @@
         @apply text-blue-500 no-underline hover:underline;
       }
 
-      /* ✅ List items with emoji bullets */
-      ul li {
-        @apply relative pl-6 mb-2;
+      /* ✅ List items with normal bullets */
+      ul:not(.list-none) {
+        @apply list-disc pl-5 mb-4;
       }
       
-      ul li::before {
-        content: "🎃";
-        @apply absolute left-0 top-0;
+      ul:not(.list-none) li {
+        @apply mb-2;
       }
     }
     
@@ -122,6 +122,7 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans">
   <nav class="my-4 flex justify-center gap-4 font-medium">
     <a href="/index.html" class="hover:underline">Home</a>
@@ -213,4 +214,5 @@
 
   </div>
 </body>
+
 </html>

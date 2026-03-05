@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>My Blog</title>
@@ -33,14 +34,13 @@
         @apply text-blue-500 no-underline hover:underline;
       }
 
-      /* ✅ List items with emoji bullets */
-      ul li {
-        @apply relative pl-6 mb-2;
+      /* ✅ List items with normal bullets */
+      ul:not(.list-none) {
+        @apply list-disc pl-5 mb-4;
       }
       
-      ul li::before {
-        content: "🎃";
-        @apply absolute left-0 top-0;
+      ul:not(.list-none) li {
+        @apply mb-2;
       }
     }
     
@@ -122,6 +122,7 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans">
   <nav class="my-4 flex justify-center gap-4 font-medium">
     <a href="/index.html" class="hover:underline">Home</a>
@@ -132,26 +133,26 @@
     
 
 <section class="bg-white p-8 rounded-lg shadow-md mb-2">
-    <p class="mb-4 text-gray-700">
-      <h1 class="text-3xl font-medium mb-4">About Us</h1>
-      สวัสดี! ยินดีต้อนรับสู่ blog ของผม 🌟  
-      เนื้อหาใน blog นี้จะค่อนข้างกระจัดกระจาย อาจมีเรื่องการใช้ชีวิต เรื่องเดฟ เรื่องเทรด เรื่องเทคโนโลยี ฯลฯ 💻✨ 
-    </p><br>
-    <p class="mb-4 text-gray-700">
-      ที่นี่ผมจะแชร์อะไรก็ได้ ที่ผมอยากแชร์ฮ่าๆ 🚀
-    </p>
-    <p class="text-gray-600">
-      ขอบคุณที่เข้ามาอ่านครับ 🙏  
-      ถ้าชอบสามารถติดตามหรือแชร์ได้เลย!
-    </p>
-    <br>
-    <img src="https://colorfully.eu/wp-content/uploads/2013/10/halloween.jpg" alt="Dinopiakz" class="mx-auto rounded-lg">
-    <div class="text-center mt-4">
-        🎃 เนื้อหาหลักๆผมแชร์ไว้อ่านเอง ถ้าผิดพลาดก็ขออภัยด้วยนะครับ 🎃
-    </div>
+  <p class="mb-4 text-gray-700">
+  <h1 class="text-3xl font-medium mb-4">About Us</h1>
+  สวัสดี! ยินดีต้อนรับสู่ blog ของผม 🌟
+  เนื้อหาใน blog นี้จะค่อนข้างกระจัดกระจาย อาจมีเรื่องการใช้ชีวิต เรื่องเดฟ เรื่องเทรด เรื่องเทคโนโลยี ฯลฯ 💻✨
+  </p><br>
+  <p class="mb-4 text-gray-700">
+    ที่นี่ผมจะแชร์อะไรก็ได้ ที่ผมอยากแชร์ฮ่าๆ 🚀
+  </p>
+  <p class="text-gray-600">
+    ขอบคุณที่เข้ามาอ่านครับ 🙏
+    ถ้าชอบสามารถติดตามหรือแชร์ได้เลย!
+  </p>
+  <br>
+  <div class="text-center mt-4 text-gray-700">
+    เนื้อหาหลักๆผมแชร์ไว้อ่านเอง ถ้าผิดพลาดก็ขออภัยด้วยนะครับ
+  </div>
 </section>
 
 
   </div>
 </body>
+
 </html>
