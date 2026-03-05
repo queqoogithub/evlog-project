@@ -223,8 +223,8 @@
 <br></p>
 <h3>ตัวเลข TC ไม่ใช่ตัวชี้วัดคุณภาพการเทส (Quality Target):</h3>
 <ul>
-<li>การกำหนดเป้าหมาย TC ที่สูงๆ เช่น "ต้องอย่างน้อย 87% ก่อนนำโค้ดขึ้น Production" อาจทำให้เดฟเขียนเทสเพื่อให้ได้ตัวเลขตามเป้าหมาย โดยไม่ได้คำนึงถึงคุณภาพ (Quality) ของการเทสจริงๆ </li>
-<li>การมี TC สูงๆ เช่น 100% อาจบ่งบอกได้ว่ามีการเขียนเทสเพียงเพื่อเพิ่มตัวเลข ไม่ได้ดูว่าส่วนใดของโค้ดมีความสำคัญและควรเน้นการทดสอบเป็นพิเศษ (เช่น การเทส <code>Trivial Code</code>)</li>
+<li>การกำหนดเป้าหมาย TC ที่สูงๆ เช่น "ต้องอย่างน้อย 80% ก่อนนำโค้ดขึ้น Production" อาจทำให้เดฟเขียนเทสเพื่อให้ได้ตัวเลขตามเป้าหมาย โดยไม่ได้คำนึงถึงคุณภาพ (Quality) ของการเทสจริงๆ </li>
+<li>การมี TC สูงๆ เช่น 100% อาจชี้ให้เห็นว่ามีการเขียนเทสเพียงเพื่อเพิ่มตัวเลข ไม่ได้ดูว่าส่วนใดของโค้ดมีความสำคัญและควรเน้นการทดสอบเป็นพิเศษ (เช่น การเทส Trivial Code)</li>
 </ul>
 <p><br></p>
 <p>Trivial Code</p>
@@ -242,7 +242,7 @@
             <span class="k">return</span> <span class="s2">&quot;UNKNOWN&quot;</span>
 </code></pre></div>
 
-<p>❌ Trivial Test ▶️ การเขียนเทสเพื่อให้ครอบคลุมทุก <code>if | elif | else</code> statement นั้นง่ายมากๆ</p>
+<p>❌ Trivial Test ⇒ การเขียนเทสเพื่อให้ครอบคลุมทุก <code>if | elif | else</code> statement นั้นง่ายมากๆ ⇒ แต่ไม่ได้สะท้อน behavior อะไรเลย</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">TestStatusCodeProcessor</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">test_success_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">process_status_code</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span> <span class="s2">&quot;SUCCESS&quot;</span><span class="p">)</span>
@@ -262,10 +262,11 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">process_status_code</span><span class="p">(</span><span class="mi">600</span><span class="p">),</span> <span class="s2">&quot;UNKNOWN&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+<p>&nbsp;</p>
 <h3>คุณภาพสำคัญกว่าปริมาณ:</h3>
 <ul>
 <li>ควรเน้นที่ Behavior หรือ จุดที่ Complexity สูง ไม่ใช่แค่การเขียนเทสเพื่อให้ครอบคลุมโค้ดมากที่สุด และหากการเปลี่ยนแปลงโค้ดเพียงเล็กน้อย แล้วต้องแก้ไขเทสจำนวนมาก อาจแสดงว่าเทสมีความซ้ำซ้อนกันอยู่ (Brittle Test)</li>
-<li>แนวทาง Test-Driven Development (TDD) เป็นแนวทางที่ดี แต่ก็ไม่เพียงพอที่จะรับประกันได้ว่าเทสนั้นมีคุณภาพดีเสมอไป เช่น ในกรณีที่เดฟตีความ "ความต้องการ (Requirement) ผิดพลาด" โค้ดที่ผ่านเทส นั้นก็อาจจะยังไม่ตอบโจทย์ Client อยู่ดี</li>
+<li>แนวทาง Test-Driven Development (TDD) เป็นแนวทางที่ดี แต่ก็ไม่เพียงพอที่จะรับประกันได้ว่าเทสนั้นมีคุณภาพดีเสมอไป เช่น ในกรณีที่เดฟตีความ "ความต้องการ (Requirement) ผิดพลาด" โค้ดที่ผ่านเทส นั้นก็อาจจะยังไม่ตอบโจทย์ Users อยู่ดี</li>
 </ul>
 <p><br></p>
 <p>ตัวอย่าง: ฟังก์ชั่นคำนวณส่วนลด</p>
@@ -278,7 +279,7 @@
             <span class="k">return</span> <span class="n">price</span>
 </code></pre></div>
 
-<p>❌ TC สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ▶️  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!</p>
+<p>❌ TC สูงแต่ซ้ำซ้อนใน Logic ที่ไม่ใช่ Core Business (เช่น integer price, zero price, negative price, none customer) ⇒  ซึ่งจะทำให้ทีมต้อง Maintain เทสที่ไม่มี Value จำนวนมาก !!!</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">TestCalculateDiscountVerbose</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">test_vip_customer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="s2">&quot;VIP&quot;</span><span class="p">),</span> <span class="mf">80.0</span><span class="p">)</span>
@@ -303,7 +304,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">calculate_discount</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;VIP&quot;</span><span class="p">),</span> <span class="mf">160.0</span><span class="p">)</span>
 </code></pre></div>
 
-<p>✅ TC น้อยกว่า แต่เน้นคุณภาพ ▶️ เน้นที่ Core Logic ในการคำนวณ Discount ตาม <code>customer_type</code></p>
+<p>✅ TC น้อยกว่า แต่เน้นคุณภาพ ⇒ เน้นที่ Core Logic ในการคำนวณ Discount ตาม <code>customer_type</code></p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">TestCalculateDiscount</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">test_customer_type_discount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">test_cases</span> <span class="o">=</span> <span class="p">[</span>
